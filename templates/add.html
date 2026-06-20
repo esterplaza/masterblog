@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Add a Post:</h1>
+    <form id='form' action='/add' method='post'>
+        <div class="input_field">
+          <label for="post-title" class="form-label">Title: </label>
+          <input type="text" class="form-control" id="post-title" name="post-title" placeholder="Enter a title ...">
+        </div>
+        <div class="input_field">
+          <label for="post-author" class="form-label">Author: </label>
+          <input type="text" class="form-control" id="post-author" name="post-author" placeholder="Author ...">
+        </div>
+        <div class="content">
+          <label for="post-content" class="form-label">Content: </label>
+          <textarea id="post-content" name="content" rows="10" placeholder="Write your post here..."></textarea>
+        </div>
+        <div class="button">
+            <button id="submit" type="submit">Publish Post</button>
+        </div>
+    </form>
+
+</body>
+</html>
+
+
