@@ -1,1 +1,1 @@
-[{"id": 2, "author": "Jane Doe", "title": "Second Post", "content": "This is another post."}]
+[{"id": 1, "author": "John Doe", "title": "First Post", "content": "This is my first post."}, {"id": 2, "author": "Jane Doe", "title": "Second Post", "content": "This is another post."}, {"id": 4, "author": "John Doe", "title": "forth post", "content": "This is a test post. This post was updated."}, {"id": 5, "author": "John Doe", "title": "fifth post", "content": "This is a new post after deleting another post. This post was also updated."}]
