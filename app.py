@@ -66,7 +66,8 @@ def add():
         new_post = {"id": new_id,
                     "author": request.form.get("post_author"),
                     "title": request.form.get("post_title"),
-                    "content": request.form.get("post_content")
+                    "content": request.form.get("post_content"),
+                    "likes": 0
                     }
         blog_posts.append(new_post)
         save_posts(blog_posts)
@@ -121,6 +122,30 @@ def update(post_id):
         save_posts(blog_posts)
         return redirect(url_for('index'))
     return render_template('update.html', post=post)
+
+
+@app.route('/like/<int:post_id>', methods=['GET', 'POST'])
+def like(post_id):
+    """Updates the likes counter by its ID.
+
+       GET request: No data modification
+       POST request: Adds one to the likes counter.
+
+       Returns:
+           A redirect to the index page without modification on GET.
+           A redirect to the index page with likes update on successful POST.
+       """
+    blog_posts = load_posts()
+    position, post = fetch_post_by_id(post_id)
+    if post is None:
+        return "Post not found", 404
+    if request.method == 'POST':
+        post["likes"] = post.get("likes", 0) + 1
+        blog_posts[position] = post
+        save_posts(blog_posts)
+        return redirect(url_for('index'))
+    return redirect(url_for('index'))
+
 
 
 if __name__ == '__main__':

@@ -13,10 +13,21 @@
             <h2>{{item.get("title")}}</h2>
             <p><em>{{item.get("author")}}</em></p>
             <p>{{item.get("content")}}</p>
-            <a href="{{ url_for('delete', post_id=item.get('id')) }}" class="post_action">Delete</a>
-            <a href="{{ url_for('update', post_id=item.get('id')) }}" class="post_action">Update</a>
+            <div class="links">
+                <div class="actions">
+                    <a href="{{ url_for('delete', post_id=item.get('id')) }}" class="post_action">Delete</a>
+                    <a href="{{ url_for('update', post_id=item.get('id')) }}" class="post_action">Update</a>
+                </div>
+                <div class="likes">
+                    <p>{{ item.get("likes", 0) }} Likes</p>
+                    <form action="{{ url_for('like', post_id=item.get('id')) }}" method="post" class="form_button">
+                        <button type="submit">Like</button>
+                    </form>
+                </div>
+            </div>
         </div>
+
     {% endfor %}
-    <a class="add_post" href="/add">Add Post</a>
+    <a href="{{ url_for('add') }}" class="add_post">Add Post</a>
 </body>
 </html>

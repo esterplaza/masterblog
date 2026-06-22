@@ -92,3 +92,51 @@ h1 {
     border-color: lightgray;
     font-size: 16px;
 }
+
+button {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: buttontext;
+    background-color: buttonface;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    font-size: 16px;
+    padding: 10px;
+    gap: 60%;
+}
+
+.likes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    gap: 15px;
+}
+
+.likes p {
+    margin: 0;
+    padding: 10px
+}
+
+.form_button {
+    padding: 10px;
+}
